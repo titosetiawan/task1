@@ -1,1 +1,39 @@
-<p>induk works!</p>
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">INSERT</h5>
+    <p class="card-text">Ini Halaman Insert</p>
+  </div>
+
+  <div class="m-3">
+    <form [formGroup]="formAdd">
+      <div class="text-center">
+        <div class="row row-cols-6 row-cols-md-6 mb-3 text-center">
+          <div class="form-group col">
+            <label for="id">ID</label>
+            <input type="text" id="id" aria-describedby="emailHelp"
+                   placeholder="ID" formControlName="id">
+          </div>
+          <div class="form-group col">
+            <label for="qty">QTY</label>
+            <input type="text" id="qty" aria-describedby="emailHelp"
+                   placeholder="Qty" formControlName="qty">
+          </div>
+          <div class="form-group col">
+            <label for="price">Price</label>
+            <input type="text" id="price" aria-describedby="emailHelp"
+                   placeholder="Enter Price" formControlName="price">
+          </div>
+          <div class="form-group col">
+            <button type="submit" (click)="save()" class="btn btn-lg btn-outline-primary">
+              simpan
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<app-child [message]="sendMessage" (postToParent)="getMessage($event)" ></app-child>

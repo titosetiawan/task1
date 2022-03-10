@@ -1,1 +1,31 @@
-<p>child works!</p>
+<table class="table table-dark table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>QTY</th>
+    <th>PRICE</th>
+    <th>TOTAL</th>
+    <th style="width: 100px">Option</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let id of list; index as i">
+    <td>{{ id.id }}</td>
+    <td>{{ id.qty }}</td>
+    <td>{{ id.price }}</td>
+    <td>{{ id.total }}</td>
+    <td>
+      <button class="btn btn-info" (click)="edit(i)">Update</button>
+    </td>
+  </tr>
+  <tr class="table-responsive">
+    <td class="text-center"><b>TOTAL</b></td>
+    <td colspan="3" class="text-end">
+      <b>
+
+      </b>
+    </td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>
