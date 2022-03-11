@@ -34,11 +34,6 @@ export class IndukComponent implements OnInit {
     this.sendMessage = model;
     model.total = model.qty * model.price
 
-    for (let i = 0; i < count.length; i++) {
-      model.count = model.price
-      console.log(model.count)
-    }
-
     console.log(model.total)
   }
 
