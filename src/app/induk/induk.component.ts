@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Model} from "../model/model.model";
+import {count} from "rxjs";
 
 @Component({
   selector: 'app-induk',
@@ -33,6 +34,11 @@ export class IndukComponent implements OnInit {
     this.sendMessage = model;
     model.total = model.qty * model.price
 
+    for (let i = 0; i < count.length; i++) {
+      model.count = model.price
+      console.log(model.count)
+    }
+
     console.log(model.total)
   }
 
@@ -43,5 +49,4 @@ export class IndukComponent implements OnInit {
     this.formAdd.controls['total'].setValue($event.total)
     this.formAdd.controls['count'].setValue($event.count)
   }
-
 }

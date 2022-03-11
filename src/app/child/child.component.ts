@@ -10,7 +10,11 @@ export class ChildComponent implements OnInit {
   @Output() postToParent = new EventEmitter<Model>()
 
   @Input() message!: Model;
+
   list!: Model[]
+  count: number = 0;
+
+
 
   constructor() {
   }
@@ -18,9 +22,14 @@ export class ChildComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
   ngOnChanges(changes: SimpleChanges) {
     if (this.list) {
       this.list.push(this.message)
+      for (let i = 0; i < this.list.length; i++) {
+        this.count += this.list[i].total
+      }
+      console.log(this.count)
     } else {
       if (this.message) {
         this.list = [this.message]
@@ -35,5 +44,4 @@ export class ChildComponent implements OnInit {
   edit(idx: number): void {
     this.postToParent.emit(this.list[idx])
   }
-
 }

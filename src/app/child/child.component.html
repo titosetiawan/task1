@@ -15,15 +15,13 @@
     <td>{{ id.price }}</td>
     <td>{{ id.total }}</td>
     <td>
-      <button class="btn btn-info" (click)="edit(i)">Update</button>
+      <button class="btn btn-primary" (click)="edit(i)">Update</button>
     </td>
   </tr>
   <tr class="table-responsive">
     <td class="text-center"><b>TOTAL</b></td>
-    <td colspan="3" class="text-end">
-      <b>
-
-      </b>
+    <td colspan="3" class="text-end" ng-repeat="$parent">
+      <b>{{count}}</b>
     </td>
     <td></td>
   </tr>
