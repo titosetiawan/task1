@@ -21,7 +21,6 @@ export class IndukComponent implements OnInit {
       'qty': [null],
       'price': [null],
       'total': [null],
-      'count': [null]
     })
   }
 
@@ -30,7 +29,6 @@ export class IndukComponent implements OnInit {
     model.id = this.formAdd.controls['id'].value
     model.qty = this.formAdd.controls['qty'].value
     model.price = this.formAdd.controls['price'].value
-    model.count = this.formAdd.controls['count'].value
     this.sendMessage = model;
     model.total = model.qty * model.price
 
@@ -42,6 +40,5 @@ export class IndukComponent implements OnInit {
     this.formAdd.controls['qty'].setValue($event.qty)
     this.formAdd.controls['price'].setValue($event.price)
     this.formAdd.controls['total'].setValue($event.total)
-    this.formAdd.controls['count'].setValue($event.count)
   }
 }

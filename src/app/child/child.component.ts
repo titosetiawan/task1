@@ -14,8 +14,6 @@ export class ChildComponent implements OnInit {
   list!: Model[]
   count: number = 0;
 
-
-
   constructor() {
   }
 
@@ -26,14 +24,16 @@ export class ChildComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges) {
     if (this.list) {
       this.list.push(this.message)
-      for (let i = 0; i < this.list.length; i++) {
-        this.count += this.list[i].total
-      }
       console.log(this.count)
     } else {
       if (this.message) {
         this.list = [this.message]
       }
+    }
+    let count = 0
+    for (let i = 0; i < this.list.length; i++) {
+      this.count = 0
+      this.count += this.list[i].total
     }
   }
 

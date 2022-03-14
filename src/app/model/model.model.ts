@@ -3,5 +3,4 @@ export class Model {
   qty!: number;
   price!: number;
   total!: number;
-  count!: number
 }
